@@ -5,7 +5,6 @@ export const sequelize = new Sequelize('db', 'root', '', {
     dialect: 'mysql'
 })
 
-// isso aq so pra testar a conexao dps
 try {
     await sequelize.authenticate()
     console.log("Conectou certin")

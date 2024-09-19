@@ -2,7 +2,7 @@ import { DataTypes } from "sequelize"
 import { sequelize } from "../config/config"
 
 // esse "User" indica o nome da tabela e as {} e os atributos dessa tabela
-const User = sequelize.define("User", {
+export const User = sequelize.define("User", {
     username: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -16,3 +16,4 @@ const User = sequelize.define("User", {
         allowNull: false
     }
 })
+
