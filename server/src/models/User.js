@@ -1,8 +1,8 @@
 import { DataTypes } from "sequelize"
-import { sequelize } from "../config/config"
+import { sequelize } from "../config/config.js"
 
 // esse "User" indica o nome da tabela e as {} e os atributos dessa tabela
-export const User = sequelize.define("User", {
+export const User = sequelize.define("Usuario", {
     username: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -12,8 +12,12 @@ export const User = sequelize.define("User", {
         allowNull: false,
     },
     password: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,  
         allowNull: false
     }
-})
+}, {
+    timestamps: false           
+});
+
+
 

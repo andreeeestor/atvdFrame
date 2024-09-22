@@ -1,7 +1,6 @@
-import { sequelize } from "./config/config";
-import { User } from "./models/User"
+import { sequelize } from "./config/config.js"
 
-sequelize.sync({force: true}).then(() => {
+sequelize.sync({alter: true}).then(() => {
     console.log("Banco está sincronizado.")
 }).catch((error) => {
     console.error(`Deu esse erro ao sincronizar: ${error}`)

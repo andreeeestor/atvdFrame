@@ -1,5 +1,4 @@
-// src/components/Register.js
-import React, { useState } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 
 const Register = () => {
@@ -10,7 +9,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/register', {
+      const response = await axios.post('http://localhost:5000/api/auth/register', {
         username,
         email,
         password,
