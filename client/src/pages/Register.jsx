@@ -1,19 +1,20 @@
-// src/components/Login.js
 import { useState } from 'react';
 import axios from 'axios';
 
-const Login = () => {
+const Register = () => {
+  const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/login', {
+      const response = await axios.post('http://localhost:5000/api/auth/register', {
+        username,
         email,
         password,
       });
-      alert(`Sucesso! Token: ${response.data.token}`);
+      alert(response.data.message);
     } catch (error) {
       alert(error.response.data.error);
     }
@@ -21,6 +22,13 @@ const Login = () => {
 
   return (
     <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        placeholder="Username"
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
+        required
+      />
       <input
         type="email"
         placeholder="Email"
@@ -35,9 +43,9 @@ const Login = () => {
         onChange={(e) => setPassword(e.target.value)}
         required
       />
-      <button type="submit">Login</button>
+      <button type="submit">Cadastrar</button>
     </form>
   );
 };
 
-export default Login;
+export default Register;

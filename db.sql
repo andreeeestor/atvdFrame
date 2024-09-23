@@ -1,12 +1,13 @@
 
 --
--- ESSE ARQUIVO AQUI NÃO SERVE DE NADA, É SÓ PRA MOSTRAR COMO É PARA CRIAR NO MYSQL WORKBENCH
+-- ESSE ARQUIVO AQUI É SÓ UMA BASE PARA VOCÊ CRIAR NO MYSQL WORKBENCH, NÃO PRECISA DESSE ARQUIVO .sql NO SEU PROJETO
+-- aqui só precisa mudar esse 'db' para o nome do seu tema
 --
 
 create database db;
 use db;
 
-CREATE TABLE Usuario (
+CREATE TABLE Usuarios (
     id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(50) NOT NULL,
     email VARCHAR(100) NOT NULL,
